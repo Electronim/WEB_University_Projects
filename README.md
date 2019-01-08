@@ -1,6 +1,6 @@
 # Introducere
 Acesta este un proiect de exemplu pentru utilizarea Vue.js pentru administrarea
-unei liste care in acest caz contine valorile ratelor de schimb valutar.
+unei liste care in acest caz contine niste stiri media.
 
 # Instalare
 Pentru instalare se poate downloada zip cu proiectul sau clona via git.
