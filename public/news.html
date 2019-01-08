@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>News Management</title>
+    <meta charset="utf-8"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="news.css">
+    <link rel="shortcut icon" href="photos/icon.png">
+</head>
+<body>
+    <div id="app">
+        <div id="header">
+            <h1 align="center">
+                <span class="first-letter">N</span>ews™ 
+                <span class="first-letter">M</span>anagement
+            </h1>
+            <nav class="mainmenuA">
+                <a href="media-channels.html">Media Channels</a>
+                <label for="drop">News</label><input type="checkbox" id="drop" checked/>
+                <input type="radio" name="shr" id="option1" value="first" v-on:click="reset()" checked/><label class="ch" for="option1">Shared</label>
+                <input type="radio" name="shr" id="option2" value="second" v-on:click="reset()"/><label class="ch" for="option2">Unshared</label>
+            </nav>
+            <nav class="mainmenuB">
+                <a href="index.html">User</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+        </div>
+        <div id="content">
+            <div id="cell" v-if="check1()" v-for="(el, id) in sharedN">
+                <img class="photo" :src="el.photo" alt="NO PHOTO AVAILABLE">
+                <p class="title">{{el.title}}</p>
+                <p class="text">{{el.content}}</p>
+                <div class="footer">
+                    <span v-if="el.keywords === null || el.keywords.length === 0 || el.keywords[0].length === 0">
+                        <i>No Keywords!</i>
+                    </span>
+                    <span id="keywo" v-if="el.keywords !== null && el.keywords.length > 0 && el.keywords[0].length !== 0">
+                        <i>Keywords: </i>
+                        <template v-for="(els, index) in el.keywords">
+                            {{els}}{{(index === el.keywords.length - 1)?"":", "}}
+                        </template>
+                    </span>
+                    <span style="float: right;"><i>Date:</i> {{el.date}}</span>
+                    <br>
+                    <span v-if="el.mediachannels === null || el.mediachannels.length === 0 || el.mediachannels[0].length === 0" style="color:red">
+                        <b>Not Shared yet!</b>
+                    </span>
+                    <span id="mediach" v-if="el.mediachannels !== null && el.mediachannels.length > 0 && el.mediachannels[0].length !== 0">
+                        <b style="color:coral">Media Channels:</b>
+                        <template v-for="(els, index) in el.mediachannels">
+                            {{els}}{{(index === el.mediachannels.length - 1)?"":", "}}
+                        </template>
+                    </span>
+                    <span style="float: right;"><b>Author:</b> {{el.author}}</span>
+                </div>
+            </div>
+
+            <div id="cell" v-if="check2()" v-for="(el, id) in unsharedN">
+                <img class="photo" :src="el.photo" alt="NO PHOTO AVAILABLE">
+                <p class="title">{{el.title}}</p>
+                <p class="text">{{el.content}}</p>
+                <div class="footer">
+                    <span v-if="el.keywords === null || el.keywords.length === 0 || el.keywords[0].length === 0">
+                        <i>No Keywords!</i>
+                    </span>
+                    <span id="keywo" v-if="el.keywords !== null && el.keywords.length > 0 && el.keywords[0].length !== 0">
+                        <i>Keywords: </i>
+                        <template v-for="(els, index) in el.keywords">
+                            {{els}}{{(index === el.keywords.length - 1)?"":", "}}
+                        </template>
+                    </span>
+                    <span style="float: right;"><i>Date:</i> {{el.date}}</span>
+                    <br>
+                    <span v-if="el.mediachannels === null || el.mediachannels.length === 0 || el.mediachannels[0].length === 0" style="color:red">
+                        <b>Not Shared yet!</b>
+                    </span>
+                    <span id="mediach" v-if="el.mediachannels !== null && el.mediachannels.length > 0 && el.mediachannels[0].length !== 0">
+                        <b style="color:coral">Media Channels:</b>
+                        <template v-for="(els, index) in el.mediachannels">
+                            {{els}}{{(index === el.mediachannels.length - 1)?"":", "}}
+                        </template>
+                    </span>
+                    <span style="float: right;"><b>Author:</b> {{el.author}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

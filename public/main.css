@@ -1,0 +1,152 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+}
+
+#app {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-rows: 120px auto;
+    grid-template-areas:
+    "header header"
+    "content content"
+}
+
+#header {
+    grid-area: header;
+    background-color: #2D3142;
+    padding: 5px;
+}
+
+#content {
+    grid-area: content;
+    background-color: #7EBDC2;
+    padding: 5px;
+}
+
+nav.mainmenuA {
+    top: 80px;
+    position: absolute;
+    left: 5%;
+}
+
+nav.mainmenuB {
+    top: 80px;
+    position: absolute;
+    right: 5%;
+}
+
+nav.mainmenuA a, nav.mainmenuB a { 
+    text-decoration: none;
+    color: coral;
+    padding: 7px 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 140%;
+    justify-self: center;
+    text-shadow: 0 0 1px black;
+}
+
+nav.mainmenuA a:hover, nav.mainmenuB a:hover {
+    color: rgb(27, 47, 136);
+    background-color: rgb(98, 122, 122);
+    border-radius: 5px 5px;
+  }
+
+body h1 {
+    font-size: 200%;
+    color: #BFC0C0;
+}
+
+.first-letter {
+    text-shadow: 0 0 10px #7EBDC2;
+    font-size: 200%;
+    color: crimson;
+}
+
+#cell {
+    display: grid;
+    grid-template-areas:
+    "photo title"
+    "photo text"
+    "photo footer";
+    grid-template-columns: 30% auto;
+    grid-template-rows: 20% 60% auto;
+    background-color: rgb(223, 230, 230);
+    margin: auto;
+    width: 70%;
+    height: 30%;
+    border: 3px solid #2D3142;
+    padding: 10px;
+    justify-self: center;
+    padding-right: 1%;
+    border-radius: 3%;
+    transition: width 1s, height 1s;
+}
+
+.title {
+    color: coral;
+    text-shadow: 0 0 3px black;
+    grid-area: title;
+    justify-self: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 220%;
+    margin-top: 2%;
+}
+
+.text {
+    grid-area: text;
+    overflow: hidden;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#cell:hover {
+    width: 80%;
+    height: 50%;
+    padding-right: 3%;
+    padding-left: 1%;
+    transition: width 1s, height 1s;
+}
+
+#cell:hover > .text {
+    width: 100%;
+    height: 95%;
+    padding-right: 1%;
+    overflow-y: scroll;
+}
+
+#cell:hover > .title {
+    padding-bottom: 20px;
+    text-shadow: 0 0 5px black;
+    font-size: 300%;
+}
+
+.photo {
+    grid-area: photo;
+    width: 97%;
+    height: 100%;
+    position: relative;
+    transition: width 1s, height 1s, transform 1s;
+    overflow: hidden;
+}
+
+.photo:hover {
+    transform: rotate(-5deg);
+    width: 100%;
+    height: 100%;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.photo:hover ~ .footer {
+    margin-left: 2%;
+}
+
+#cell:hover > .footer {
+    margin-top: 2%;
+    padding-right: 2%;
+}

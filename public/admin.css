@@ -1,0 +1,233 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+}
+
+#addFixedButton {
+    position: fixed;
+    top: 0;
+    width: 4%;
+    height: 5%;
+    background-color: darksalmon;
+    right: 5.5%;
+    top: 14%;
+    text-justify: right;
+    color: black;
+    text-align: center;
+    font-size: 120%;
+    border-radius: 10px;
+}
+
+#app {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-rows: 120px auto;
+    grid-template-areas:
+    "header header"
+    "content content"
+}
+
+#header {
+    grid-area: header;
+    background-color: #2D3142;
+    padding: 5px;
+}
+
+#content {
+    grid-area: content;
+    background-color: #7EBDC2;
+    padding: 5px;
+    
+}
+
+nav.mainmenuA {
+    top: 80px;
+    position: absolute;
+    left: 5%;
+}
+
+nav.mainmenuB {
+    top: 80px;
+    position: absolute;
+    right: 5%;
+}
+
+nav.mainmenuA a, nav.mainmenuB a { 
+    text-decoration: none;
+    color: coral;
+    padding: 7px 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 140%;
+    justify-self: center;
+    text-shadow: 0 0 1px black;
+}
+
+nav.mainmenuA a:hover, nav.mainmenuB a:hover {
+    color: rgb(27, 47, 136);
+    background-color: rgb(98, 122, 122);
+    border-radius: 5px 5px;
+  }
+
+body h1 {
+    font-size: 200%;
+    color: #BFC0C0;
+}
+
+.first-letter {
+    text-shadow: 0 0 10px #7EBDC2;
+    font-size: 200%;
+    color: crimson;
+}
+
+#cell {
+    display: grid;
+    grid-template-areas:
+    "photo title ops"
+    "photo text ops"
+    "photo footer ops";
+    grid-template-columns: 25% 70% 5%;
+    grid-template-rows: 20% 60% auto;
+    background-color: rgb(223, 230, 230);
+    margin: auto;
+    width: 75%;
+    height: 30%;
+    border: 3px solid #2D3142;
+    padding: 10px;
+    justify-self: center;
+    padding-right: 1%;
+    border-radius: 3%;
+}
+
+.ops {
+    grid-area: ops;
+    background-color: #2D3142;
+    border-radius: 20%;
+    height: 30%;
+    margin-left: 17%;
+    width: 95%;
+    margin-top: 100%;
+}
+
+.title {
+    color: coral;
+    text-shadow: 0 0 3px black;
+    grid-area: title;
+    justify-self: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 220%;
+    margin-top: 2%;
+}
+
+.text {
+    grid-area: text;
+    overflow: hidden;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.photo {
+    grid-area: photo;
+    width: 97%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+#opsButton {
+    background-color: #7EBDC2;
+    color: red;
+    height: 30%;
+    width: 87%;
+    border: none;
+    text-decoration: none;
+    display: block;
+    font-size: 100%;
+    border-radius: 10px;
+    margin: auto;
+    text-shadow: 0 0 1px cornsilk;
+    overflow: hidden;
+    padding: 7% 7%;
+}
+
+#add {
+    display: grid;
+    grid-template-areas:
+    "addImage addContent"
+    "addFooter addFooter";
+
+    grid-template-columns: 30%  auto;
+    grid-template-rows: 80% auto;
+
+    background-color: rgb(223, 230, 230);
+    margin: auto;
+    width: 75%;
+    height: 60%;
+    border: 3px solid #2D3142;
+    padding: 10px;
+    justify-self: center;
+    padding-right: 1%;
+    border-radius: 3%;
+}
+
+.addImage {
+    grid-area: addImage;
+    display: block;
+    width: 95%;
+    height: 78%;
+    margin: auto;
+    margin-top: 17%;
+    margin-right: 3.5%;
+}
+
+.addContent {
+    grid-area: addContent;
+    width: 100%;
+    height: 100%;
+}
+
+.addContent > input {
+    display: block;
+    font-size: 200%;
+    text-align: center;
+    margin-top: 1%;
+    margin-left: 15%;
+}
+
+.addContent > textarea {
+    width: 100%;
+    height: 78%;
+    padding: 1%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.addFooter {
+    display: block;
+    grid-area: addFooter;
+    width: 100%;
+    height: 100%;
+}
+
+.addFooter :first-child {
+    margin-left: 0.5%;
+}
+
+.addFooter > button {
+    margin-top: 2%;
+    width: 100%;
+    height:60%;
+    font-size: 110%;
+    background-color: #BFC0C0;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.scroll {
+    text-decoration: none;
+}

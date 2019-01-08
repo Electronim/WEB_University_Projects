@@ -1,0 +1,106 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+}
+
+#app {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-rows: 120px auto;
+    grid-template-areas:
+    "header header"
+    "content content"
+}
+
+#header {
+    grid-area: header;
+    background-color: #2D3142;
+    padding: 5px;
+}
+
+#content {
+    grid-area: content;
+    background-color: #7EBDC2;
+    padding: 5px;
+}
+
+nav.mainmenuA {
+    top: 80px;
+    position: absolute;
+    left: 5%;
+}
+
+nav.mainmenuB {
+    top: 80px;
+    position: absolute;
+    right: 5%;
+}
+
+nav.mainmenuA a, nav.mainmenuB a { 
+    text-decoration: none;
+    color: coral;
+    padding: 7px 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 140%;
+    justify-self: center;
+    text-shadow: 0 0 1px black;
+}
+
+nav.mainmenuA a:hover, nav.mainmenuB a:hover {
+    color: rgb(27, 47, 136);
+    background-color: rgb(98, 122, 122);
+    border-radius: 5px 5px;
+}
+
+body h1 {
+    font-size: 200%;
+    color: #BFC0C0;
+}
+
+.first-letter {
+    text-shadow: 0 0 10px #7EBDC2;
+    font-size: 200%;
+    color: crimson;
+}
+
+#cell {
+    background-color: rgb(223, 230, 230);
+    margin: auto;
+    width: 70%;
+    height: auto;
+    border: 3px solid #2D3142;
+    padding: 10px;
+    justify-self: center;
+    border-radius: 3%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 100px;
+}
+
+.title {
+    color: coral;
+    text-shadow: 0 0 3px black;
+    justify-self: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 250%;
+    margin-top: 15px;
+    text-align: center;
+}
+
+#each {
+    padding: 10px;
+    width: 25%;
+    height: 250px;
+    margin-bottom: 30px;
+}
+
+#cont {
+    overflow: hidden;
+    width: 100%;
+    height: 43px;
+    font-size: 110%;
+    color: black;
+}
+
